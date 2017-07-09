@@ -96,16 +96,3 @@ pred <- predict(fit,combi[8524:14204,-10])
 
 output$Item_Outlet_Sales <- pred
 write.csv(output,"rpart-baseline3.csv",row.names = FALSE)
-
-combi$Item_Fat_Content <- as.factor(combi$Item_Fat_Content)
-plot(combi$Avg_Sales[combi$Item_Fat_Content=="Regular"])
-
-table(train$Item_Type,train$Item_Fat_Content)
-
-
-
-library(hexbin)
-plot(train$mednMRP~train$Avg_Sales)
-library(RColorBrewer)
-library(tabplot)
-tableplot(train)
